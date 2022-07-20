@@ -530,7 +530,7 @@ static inline int sat_clause_compute_lbd( sat_solver* s, clause* c )
  */
 int sat_solver_clause_new(sat_solver* s, lit* begin, lit* end, int learnt)
 {
-    int fUseBinaryClauses = 1;
+    int fUseBinaryClauses = 0;
     int size;
     clause* c;
     int h;
@@ -1749,7 +1749,7 @@ int sat_solver_addclause(sat_solver* s, lit* begin, lit* end)
     begin = veci_begin( &s->temp_clause );
     end = begin + veci_size( &s->temp_clause );
 
-    // insertion sort
+    // insertion sort - WHY!!!!!!!!!!!!!!!!!!!!
     maxvar = lit_var(*begin);
     for (i = begin + 1; i < end; i++){
         lit l = *i;
